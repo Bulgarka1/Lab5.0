@@ -12,58 +12,62 @@ namespace Exercise1
         {
             Console.WriteLine("Выберите цикл: for, while,do-while");
             string name = Console.ReadLine();
+            double sum = 0;
+            double x;
+            int k;
             switch (name)
             {
-                case "for":
-
-                    for (double x = -1; x <= 1; x = x + 0.1)
+                case "for":                   
+                    for ( x = -1; x <= 1; x = x + 0.1)
                     {
-                        for (int k = 1; k <= 10; k = k + 1)
-
+                        for ( k = 1; k <= 10; k = k + 1)
                         {
-                           double t = F(x, k);
-                           Console.Write($"{Math.Round(t, 4)}\t");
-                        }
-                    }
-                    break;
-
-                case "while":
-                    int b = 1;
-                    while (b < 11)
-                    {
-                        double a = -1;
-                        while (a < 2)
-                        {
-                            double t = F(a, b);
+                            double t = F(x, k);
+                            sum += t;
                             Console.Write($"{Math.Round(t, 4)}\t");
-                            a = a + 0.1;
-
+                            //Console.Write("{0},{1} ", x, k);
                         }
                         Console.WriteLine();
-                        b++;
                     }
+                    Console.WriteLine(sum);
                     break;
-
-                case "do-while":
-                    int m = 1;
-                    do
+                case "while":
+                    x = -1;
+                    while (x <= 1)
                     {
-                        
-                        double n = -1;
+                        k = 1;
+                        while (k <= 10)
+                        {
+                            double t = F(x, k);
+                            sum += t;
+                            Console.Write($"{Math.Round(t, 4)}\t");
+                            //Console.Write("{0},{1} ", x, k);
+                            k = k + 1;
+                        }
+                        Console.WriteLine();
+                        x= x + 0.1;
+                    }
+                    Console.WriteLine(sum);
+                    break;
+                case "do-while":
+                    x = -1;
+                    do
+                    {                        
+                        k = 1;
                         do
                         {
-                            double t = F(n, m);
+                            double t = F(x, k);
+                            sum += t;
                             Console.Write($"{Math.Round(t, 4)}\t");
-                            n = n + 0.1;
+                            k = k + 1;
                         }
-
-                        while (n < 2);
+                        while (k <= 10);
                         Console.WriteLine();
-                        m++;
+                        x = x + 0.1;
                     }
-                    while (m < 11);
+                    while (x <= 1);
+                    Console.WriteLine(sum);
                     break;
-
             }
         }
     }

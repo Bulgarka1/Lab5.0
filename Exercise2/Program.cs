@@ -11,39 +11,37 @@ namespace Exercise2
             return f;
         }
         static void Main(string[] args)
+
         {
 
             double x = Convert.ToDouble(Console.ReadLine());
 
-
-
             double sum = 0;
-            Console.WriteLine("Сумма ряда:");
-            for (int k = 1; k < 10; k++)
+            double multi = 1;
+
+            for (int k = 1; k <= 10; k++)
             {
                 double f = Function(x, k);
                 //Console.WriteLine(f);
-                sum += f;
-
+                sum = sum + f;
+                multi = multi * f;
                 //Console.WriteLine();
-
-
             }
+            Console.WriteLine("Сумма ряда:");
             Console.WriteLine(sum);
             Console.WriteLine("Произведение ряда:");
+            Console.WriteLine(multi);
+            // Console.WriteLine("Произведение ряда:");
 
-
-            for (int k = 1; k < 10; k++)
+            //sum = 1;
+            // for (int k = 1; k <= 10; k++)
             {
-                double f = Function(x, k);
+                // double f = Function(x, k);
                 // Console.WriteLine(f);
-                sum *= f;
-
+                //  sum = sum * f;
                 // Console.WriteLine();
-
-
             }
-            Console.WriteLine(sum);
+            //Console.WriteLine(sum);
         }
 
     }
