@@ -14,10 +14,12 @@ namespace Exercise3
                 int i = 0;
                 while (R >= 1)
                 {
+                   // Console.WriteLine(R);
                     i++;
                     R = R / 10.0;
-
+                   
                 }
+                //Console.WriteLine(R);
                 i = i + 1;
 
                 if (i < 6)
@@ -28,7 +30,12 @@ namespace Exercise3
                     }
                     Console.Write(x);
                 }
-            }
+                else 
+                {
+                    int t = x / 100000;
+                    Console.WriteLine(x-t*100000);
+                }
+            }//123456 23456
         }
     }
 }
